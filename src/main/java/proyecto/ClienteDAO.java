@@ -5,24 +5,25 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class VendedoresDAO {
+public class ClienteDAO {
+    
     PreparedStatement ps;
     ResultSet rs;
     Connection con;
     ConexionP conectar = new ConexionP();
     
-    public int filtro(String nombre, String contra){
-        String sql = "select * from vendedor where nombre = " + "'" + nombre + "'" + " and password = " + "'" + contra + "'"+ ";";
-        try{
+    public void filtro(int cod){
+        String sql = "select * from productos where Codigo="+cod;
+        try {
             con = conectar.Conectar();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
-            if(rs.next()){
-                return rs.getInt(7);
+
+            if (rs.next()) {
+                System.out.println(rs.getString(2));
             }
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+
         }
-        return -1;
     }
 }

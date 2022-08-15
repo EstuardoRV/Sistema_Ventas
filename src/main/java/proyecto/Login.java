@@ -41,7 +41,7 @@ public class Login extends JFrame{
         ActionListener verificar = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VendedoresDAO vd = new VendedoresDAO();
+                VendedoresDAO1 vd = new VendedoresDAO1();
                 int respuesta = vd.filtro(t1.getText(), t2.getText());
                 switch (respuesta) {
                     case 1:

@@ -21,7 +21,7 @@ public class Administrador extends JFrame{
         cs.ejecutar();
         Vendedores_Vistas vs = new Vendedores_Vistas();
         vs.ejecutar();
-        
+         
         pestañas.addTab("Sucursales", sv.sucursales);
         pestañas.addTab("Productos", ps.productos);
         pestañas.addTab("Clientes", cs.clientes);
